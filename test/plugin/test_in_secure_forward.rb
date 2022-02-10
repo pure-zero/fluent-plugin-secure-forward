@@ -214,7 +214,7 @@ CONFIG
       end
     end
 
-    { p = create_driver(<<CONFIG).instance }
+    assert_raise("Any error") { p = create_driver(<<CONFIG).instance }
   type secure_forward
   secure true
   shared_key         secret_string
