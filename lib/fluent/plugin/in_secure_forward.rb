@@ -204,7 +204,7 @@ module Fluent
 
       @client_ca = nil
       if @cert_path
-        @key = OpenSSL::PKey::RSA.new(File.read(@private_key_path), @private_key_passphrase)
+        @key = OpenSSL::PKey::read(File.read(@private_key_path), @private_key_passphrase)
         certs = Fluent::SecureForward::CertUtil.certificates_from_file(@cert_path)
         @cert = certs.shift
         @client_ca = certs
