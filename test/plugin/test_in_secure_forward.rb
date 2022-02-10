@@ -214,7 +214,7 @@ CONFIG
       end
     end
 
-    # assert_raise(OpenSSL::PKey::RSAError) { p = create_driver(<<CONFIG).instance }
+    { p = create_driver(<<CONFIG).instance }
   type secure_forward
   secure true
   shared_key         secret_string
